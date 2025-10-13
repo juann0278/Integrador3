@@ -1,8 +1,10 @@
 package com.example.springbootexample.repository;
 
 
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface EstudianteRepository {
 
 }
