@@ -1,6 +1,20 @@
 package com.example.springbootexample.entities;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
 public class Estudiante {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer dni;
     private int nroLibreta;
     private String nombre;
@@ -19,45 +33,4 @@ public class Estudiante {
         this.genero = genero;
     }
 
-    public Integer getDni() {
-        return dni;
-    }
-
-    public int getNroLibreta() {
-        return nroLibreta;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-
-    @Override
-    public String toString() {
-        return "EstudianteDTO{" +
-                "dni=" + dni +
-                ", nroLibreta=" + nroLibreta +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad=" + edad +
-                ", ciudad='" + ciudad + '\'' +
-                ", genero='" + genero + '\'' +
-                '}';
-    }
 }

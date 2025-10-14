@@ -1,6 +1,6 @@
 package com.example.springbootexample;
 
-import com.example.springbootexample.utils.CargaDeDatos;
+//import com.example.springbootexample.utils.CargaDeDatos;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class SpringbootExampleApplication {
 
     @Autowired
-    CargaDeDatos cargaDeDatos;
+//    CargaDeDatos cargaDeDatos;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootExampleApplication.class, args);
@@ -20,6 +20,6 @@ public class SpringbootExampleApplication {
 
     @PostConstruct
     public void init() throws IOException {
-        cargaDeDatos.cargarDatosDesdeCSV();
+//        cargaDeDatos.cargarDatosDesdeCSV();
     }
 }
