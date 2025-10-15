@@ -10,6 +10,10 @@ import java.util.List;
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
 
+    //c) recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple.
+    @Query ("SELECT e FROM Estudiante e ORDER BY e.edad")
+    Estudiante findOrderByEdad(int edad);
+
     //d) recuperar un estudiante, en base a su número de libreta universitaria.
     @Query("SELECT e FROM Estudiante e WHERE e.nroLibreta =:libreta")
     Estudiante findByNroLibreta(int nroLibreta);
