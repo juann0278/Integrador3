@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 public class Estudiante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer dni;
+    private Integer dni; // <- sin GeneratedValue
+
     private int nroLibreta;
     private String nombre;
     private String apellido;
@@ -32,5 +32,4 @@ public class Estudiante {
         this.ciudad = ciudad;
         this.genero = genero;
     }
-
 }
