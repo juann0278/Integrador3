@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 public class InscripcionResponseDTO {
 
     private final Integer id;
-    private final Integer idCarrera;
+    private final Long idCarrera;
     private final Integer dniEstudiante;
     private final Integer inscripcion;
     private final Integer graduacion;

@@ -40,7 +40,7 @@ public class CargaDeDatos {
              CSVParser csvParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader)){
             for (CSVRecord csvRecord : csvParser) {
                 Carrera carrera = new Carrera();
-                carrera.setId(Integer.parseInt(csvRecord.get("id_carrera")));
+                carrera.setId(Long.valueOf(csvRecord.get("id_carrera")));
                 carrera.setNombre(csvRecord.get("carrera"));
                 carrera.setDuracion(Integer.parseInt(csvRecord.get("duracion")));
                 carreraRepository.save(carrera);
