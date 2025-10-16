@@ -1,5 +1,6 @@
 package com.example.springbootexample.entities;
 
+import com.example.springbootexample.service.dto.inscripcion.InscripcionRequestDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,27 +14,18 @@ public class Inscripcion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    // 🔹 Relación con Carrera
-    @ManyToOne
+    // 🔹 Relación ManyToOne con Carrera
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_carrera", referencedColumnName = "id")
     private Carrera carrera;
 
-    // 🔹 Relación con Estudiante
-    @ManyToOne
+    // 🔹 Relación ManyToOne con Estudiante
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_estudiante", referencedColumnName = "dni")
     private Estudiante estudiante;
 
-    private Integer inscripcion;
+    private Integer inscripcion;  // Año de inscripción
     private Integer graduacion;
     private Integer antiguedad;
-
-    public Inscripcion(Integer id, Carrera carrera, Estudiante estudiante,
-                       Integer inscripcion, Integer graduacion, Integer antiguedad) {
-        this.id = id;
-        this.carrera = carrera;
-        this.estudiante = estudiante;
-        this.inscripcion = inscripcion;
-        this.graduacion = graduacion;
-        this.antiguedad = antiguedad;
-    }
 }
+
