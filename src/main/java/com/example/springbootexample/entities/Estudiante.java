@@ -1,6 +1,7 @@
 package com.example.springbootexample.entities;
 
 
+import com.example.springbootexample.service.dto.estudiante.EstudianteRequestDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,13 +24,13 @@ public class Estudiante {
     private String ciudad;
     private String genero;
 
-    public Estudiante(Integer dni, int nroLibreta, String nombre, String apellido, int edad, String ciudad, String genero) {
-        this.dni = dni;
-        this.nroLibreta = nroLibreta;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.ciudad = ciudad;
-        this.genero = genero;
+    public Estudiante(EstudianteRequestDTO request) {
+        this.dni = request.getDni();
+        this.nroLibreta = request.getNroLibreta();
+        this.nombre = request.getNombre();
+        this.apellido = request.getApellido();
+        this.edad = request.getEdad();
+        this.ciudad = request.getCiudad();
+        this.genero = request.getGenero();
     }
 }
