@@ -23,7 +23,7 @@ public class InscripcionService {
     @Transactional
     public InscripcionResponseDTO matricular(InscripcionRequestDTO request) {
         // Buscar estudiante por DNI
-        Estudiante estudiante = estudianteRepository.findByDniEstudiante(request.getDniEstudiante())
+        Estudiante estudiante = estudianteRepository.findByDni(Integer.valueOf(request.getDniEstudiante()))
                 .orElseThrow(()->(new RuntimeException("Estudiante no encontrado con DNI" + request.getDniEstudiante())));
 
         // Buscar carrera por ID

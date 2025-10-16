@@ -31,13 +31,13 @@ public class EstudianteResource {
     }
 
     // d) recuperar un estudiante, en base a su número de libreta universitaria.
-    @GetMapping("/nroLibreta")
+    @GetMapping("/{nroLibreta}")
     public EstudianteResponseDTO findByNroLibreta(@PathVariable int nroLibreta) {
         return this.estudianteService.findByNroLibreta(nroLibreta);
     }
 
     //e) recuperar todos los estudiantes, en base a su género.
-    @GetMapping("/genero")
+    @GetMapping("/genero/{genero}")
     public List<EstudianteResponseDTO> findAllByGenero(@PathVariable String genero) {
         return this.estudianteService.findAllByGenero(genero);
     }
