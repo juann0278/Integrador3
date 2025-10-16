@@ -29,4 +29,17 @@ public class EstudianteResource {
     public List<EstudianteResponseDTO> findAll() {
         return this.estudianteService.findAll();
     }
+
+    // d) recuperar un estudiante, en base a su número de libreta universitaria.
+    @GetMapping("/nroLibreta")
+    public EstudianteResponseDTO findByNroLibreta(@PathVariable int nroLibreta) {
+        return this.estudianteService.findByNroLibreta(nroLibreta);
+    }
+
+    //e) recuperar todos los estudiantes, en base a su género.
+    @GetMapping("/genero")
+    public List<EstudianteResponseDTO> findAllByGenero(@PathVariable String genero) {
+        return this.estudianteService.findAllByGenero(genero);
+    }
+
 }

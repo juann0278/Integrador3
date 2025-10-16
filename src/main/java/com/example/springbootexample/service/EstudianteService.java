@@ -17,6 +17,7 @@ public class EstudianteService {
 
     private final EstudianteRepository estudianteRepository;
 
+    //Inciso 2.a
     @Transactional
     public EstudianteResponseDTO save(EstudianteRequestDTO request){
         final var estudiante = new Estudiante(request);
@@ -24,6 +25,7 @@ public class EstudianteService {
         return new EstudianteResponseDTO(result.getDni(),result.getNroLibreta(),result.getNombre(),result.getApellido(),result.getEdad(),result.getCiudad(),result.getGenero());
     }
 
+    //Inciso 2c
     @Transactional
     public List<EstudianteResponseDTO> findAll(){
         return this.estudianteRepository.findAll(Sort.by(Sort.Direction.ASC, "edad"))
@@ -31,4 +33,23 @@ public class EstudianteService {
                 .map(EstudianteResponseDTO::new)
                 .toList();
     }
+
+    //Inciso 2d
+    @Transactional
+    public EstudianteResponseDTO findByNroLibreta(int libreta){
+        Estudiante estudianteResponse = this.estudianteRepository.findByNroLibreta(libreta);
+        EstudianteResponseDTO estudianteResponseDTO = new EstudianteResponseDTO(estudianteResponse);
+        return estudianteResponseDTO;
+    }
+
+    //Inciso 2e
+    @Transactional
+    public List<EstudianteResponseDTO> findAllByGenero(String genero){
+        return this.estudianteRepository.findAllByGenero(genero)
+                .stream()
+                .map(EstudianteResponseDTO::new)
+                .toList();
+    }
 }
+
+
