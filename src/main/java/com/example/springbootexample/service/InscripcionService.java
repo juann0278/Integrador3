@@ -21,26 +21,24 @@ public class InscripcionService {
     private final CarreraRepository carreraRepository;
 
     @Transactional
-    public InscripcionResponseDTO save(InscripcionRequestDTO request) {
-        // Buscar la carrera por ID
-        Carrera carrera = carreraRepository.findById(Long.valueOf(request.getIdCarrera()))
-                .orElseThrow(() -> new RuntimeException("Carrera no encontrada"));
+    public InscripcionResponseDTO matricular(InscripcionRequestDTO request) {
+        // Buscar estudiante por DNI
+        Estudiante estudiante = estudianteRepository.findByDniEstudiante(request.getDniEstudiante())
+                .orElseThrow(()->(new RuntimeException("Estudiante no encontrado con DNI" + request.getDniEstudiante())));
 
-        // Buscar el estudiante por DNI
-        Estudiante estudiante = estudianteRepository.findById(Long.valueOf(request.getDniEstudiante()))
-                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
+        // Buscar carrera por ID
+        Carrera carrera = carreraRepository.findById(request.getIdCarrera())
+                .orElseThrow(()->(new RuntimeException("Carrera no encontrada con ID" + request.getIdCarrera())));
 
-        // Crear la inscripción y asignar relaciones
         Inscripcion inscripcion = new Inscripcion();
         inscripcion.setCarrera(carrera);
         inscripcion.setEstudiante(estudiante);
         inscripcion.setInscripcion(request.getAnioInscripcion());
-        inscripcion.setAntiguedad(0);  // valor inicial
-        inscripcion.setGraduacion(0); // valor inicial
 
-        // Guardar en DB
-        Inscripcion result = inscripcionRepository.save(inscripcion);
+        inscripcionRepository.save(inscripcion);
 
-        return new InscripcionResponseDTO(result);
+        return new InscripcionResponseDTO(inscripcion);
+
     }
+
 }

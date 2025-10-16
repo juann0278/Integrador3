@@ -20,7 +20,7 @@ public class EstudianteResource {
     @PostMapping("")
     public ResponseEntity<EstudianteResponseDTO> save(@RequestBody EstudianteRequestDTO request) {
         final var result = this.estudianteService.save(request);
-        return ResponseEntity.accepted().body(result);
+        return ResponseEntity.ok(result);
     }
 
     //c) recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple

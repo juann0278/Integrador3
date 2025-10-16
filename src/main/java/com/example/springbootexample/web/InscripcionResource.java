@@ -19,8 +19,8 @@ public class InscripcionResource {
 
     //b) matricular un estudiante en una carrera
     @PostMapping("/matricular")
-    public ResponseEntity<InscripcionResponseDTO> save(@RequestBody InscripcionRequestDTO request) {
-        final var result = this.inscripcionService.save(request);
-        return ResponseEntity.accepted().body(result);
+    public ResponseEntity<InscripcionResponseDTO> matricular(@RequestBody InscripcionRequestDTO request) {
+        final var result = this.inscripcionService.matricular(request);
+        return ResponseEntity.ok(result);
     }
 }

@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InscripcionRequestDTO {
-    private Integer idCarrera;      // ID de la carrera
-    private Integer dniEstudiante;  // DNI del estudiante
+    private Long idCarrera;      // ID de la carrera
+    private String dniEstudiante;  // DNI del estudiante
     private Integer anioInscripcion;
 }
