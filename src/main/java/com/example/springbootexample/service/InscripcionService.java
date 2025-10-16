@@ -1,4 +1,4 @@
 package com.example.springbootexample.service;
 
-public class Inscripcion {
+public class InscripcionService {
 }
