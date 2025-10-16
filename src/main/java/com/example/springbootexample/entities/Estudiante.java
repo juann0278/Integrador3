@@ -2,12 +2,11 @@ package com.example.springbootexample.entities;
 
 
 import com.example.springbootexample.service.dto.estudiante.EstudianteRequestDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -23,6 +22,9 @@ public class Estudiante {
     private int edad;
     private String ciudad;
     private String genero;
+
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+    private List<Inscripcion> inscripciones;
 
     public Estudiante(EstudianteRequestDTO request) {
         this.dni = request.getDni();

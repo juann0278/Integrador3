@@ -50,6 +50,12 @@ public class EstudianteService {
                 .map(EstudianteResponseDTO::new)
                 .toList();
     }
+
+    //Inciso 2g
+    @Transactional
+    public List<EstudianteResponseDTO> findByCarreraFilteredByCiudad(Integer id_carrera, String ciudad){
+        return this.estudianteRepository.findByCarreraFilteredByCiudad(id_carrera, ciudad);
+    }
 }
 
 

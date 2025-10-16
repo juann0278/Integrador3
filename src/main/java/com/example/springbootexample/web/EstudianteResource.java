@@ -42,4 +42,8 @@ public class EstudianteResource {
         return this.estudianteService.findAllByGenero(genero);
     }
 
+    @GetMapping("/filtrar")
+    public List<EstudianteResponseDTO> findByCarreraFilteredByCiudad(@RequestParam Integer id_carrera, @RequestParam String ciudad){
+        return this.estudianteService.findByCarreraFilteredByCiudad(id_carrera, ciudad);
+    }
 }
