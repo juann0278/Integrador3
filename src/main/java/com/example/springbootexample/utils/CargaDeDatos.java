@@ -32,9 +32,9 @@ public class CargaDeDatos {
     }
 
     public void cargarDatosDesdeCSV() throws IOException {
-        File carreraCSV = ResourceUtils.getFile("src/main/java/com/example/springbootexample/csv/carreras.csv");
-        File estudiantesCSV = ResourceUtils.getFile("src/main/java/com/example/springbootexample/csv/estudiantes.csv");
-        File inscripcionCSV = ResourceUtils.getFile("src/main/java/com/example/springbootexample/csv/estudianteCarrera.csv");
+        File carreraCSV = ResourceUtils.getFile("src/main/resources/csv/carreras.csv");
+        File estudiantesCSV = ResourceUtils.getFile("src/main/resources/csv/estudiantes.csv");
+        File inscripcionCSV = ResourceUtils.getFile("src/main/resources/csv/estudianteCarrera.csv");
 
         try (FileReader reader = new FileReader(carreraCSV);
              CSVParser csvParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader)){

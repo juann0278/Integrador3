@@ -22,7 +22,7 @@ public class EstudianteService {
     public EstudianteResponseDTO save(EstudianteRequestDTO request){
         final var estudiante = new Estudiante(request);
         final var result =  this.estudianteRepository.save(estudiante);
-        return new EstudianteResponseDTO(result.getDni(),result.getNroLibreta(),result.getNombre(),result.getApellido(),result.getEdad(),result.getCiudad(),result.getGenero());
+        return new EstudianteResponseDTO(result);
     }
 
     //Inciso 2c
