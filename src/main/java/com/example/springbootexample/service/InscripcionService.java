@@ -41,4 +41,10 @@ public class InscripcionService {
 
     }
 
+    @Transactional
+    public void delete(Long id) {
+
+        inscripcionRepository.deleteById(id);
+    }
+
 }

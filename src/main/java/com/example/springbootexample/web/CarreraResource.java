@@ -5,9 +5,7 @@ import com.example.springbootexample.service.CarreraService;
 import com.example.springbootexample.service.dto.carrera.CarreraResponseDTO;
 import com.example.springbootexample.service.dto.reporte.ReporteResponseDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +28,11 @@ public class CarreraResource {
     @GetMapping("/reporte")
     public List<ReporteResponseDTO> getReporteCarrera(){
         return this.carreraService.getReporteCarrera();
+    }
+
+    @DeleteMapping("/carrera/{id_carrera}")
+    public void deleteCarrera(@PathVariable long id_carrera){
+        this.carreraService.deleteById(id_carrera);
     }
 
 }

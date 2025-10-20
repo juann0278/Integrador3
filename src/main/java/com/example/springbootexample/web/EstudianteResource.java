@@ -46,4 +46,9 @@ public class EstudianteResource {
     public List<EstudianteResponseDTO> findByCarreraFilteredByCiudad(@RequestParam Integer id_carrera, @RequestParam String ciudad){
         return this.estudianteService.findByCarreraFilteredByCiudad(id_carrera, ciudad);
     }
+
+    @DeleteMapping("/estudiante/{dni}")
+    public void delete(@PathVariable Long dni) {
+        this.estudianteService.deleteById(dni);
+    }
 }

@@ -56,6 +56,11 @@ public class EstudianteService {
     public List<EstudianteResponseDTO> findByCarreraFilteredByCiudad(Integer id_carrera, String ciudad){
         return this.estudianteRepository.findByCarreraFilteredByCiudad(id_carrera, ciudad);
     }
+
+    @Transactional
+    public void deleteById(long id){
+        this.estudianteRepository.deleteById(id);
+    }
 }
 
 

@@ -5,10 +5,7 @@ import com.example.springbootexample.service.dto.inscripcion.InscripcionRequestD
 import com.example.springbootexample.service.dto.inscripcion.InscripcionResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/inscripciones")
@@ -22,5 +19,10 @@ public class InscripcionResource {
     public ResponseEntity<InscripcionResponseDTO> matricular(@RequestBody InscripcionRequestDTO request) {
         final var result = this.inscripcionService.matricular(request);
         return ResponseEntity.ok(result);
+    }
+
+    @DeleteMapping("/matricular")
+    public void delete(@PathVariable Long id) {
+        this.inscripcionService.delete(id);
     }
 }

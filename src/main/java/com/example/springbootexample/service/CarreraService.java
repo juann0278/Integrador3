@@ -25,4 +25,9 @@ public class CarreraService {
     public List<ReporteResponseDTO> getReporteCarrera() {
         return this.carreraRepository.getReporteCarrera();
     }
+
+    @Transactional
+    public void deleteById(long id){
+        this.carreraRepository.deleteById(id);
+    }
 }
