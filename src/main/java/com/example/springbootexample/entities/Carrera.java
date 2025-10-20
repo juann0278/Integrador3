@@ -21,8 +21,7 @@ public class Carrera {
     @OneToMany(mappedBy = "carrera", cascade = CascadeType.ALL)
     private List<Inscripcion> inscripciones;
 
-    //este constructor deberia tener por parametro un CarreraRequestDTO
-    //pero aun no fue creada la clase
+
    public Carrera(String nombre, int duracion, long cantInscriptos) {
        this.nombre = nombre;
        this.duracion = duracion;
