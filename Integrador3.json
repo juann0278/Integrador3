@@ -226,6 +226,79 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "borrado de un estudiante.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dni\": 37935541,\n  \"nroLibreta\": 12345,\n  \"nombre\": \"Marcos\",\n  \"apellido\": \"Córdoba\",\n  \"edad\": 22,\n  \"ciudad\": \"Rosario\",\n  \"genero\": \"Masculino\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estudiantes/estudiante/57799873",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiantes",
+						"estudiante",
+						"57799873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrado de una inscripcion.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/inscripciones/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"inscripciones",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrado de una carrera.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dni\": 37935541,\n  \"nroLibreta\": 12345,\n  \"nombre\": \"Marcos\",\n  \"apellido\": \"Córdoba\",\n  \"edad\": 22,\n  \"ciudad\": \"Rosario\",\n  \"genero\": \"Masculino\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carreras/carrera/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carreras",
+						"carrera",
+						"5"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [

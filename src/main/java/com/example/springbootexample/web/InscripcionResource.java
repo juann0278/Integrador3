@@ -21,7 +21,7 @@ public class InscripcionResource {
         return ResponseEntity.ok(result);
     }
 
-    @DeleteMapping("/matricular")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         this.inscripcionService.delete(id);
     }
